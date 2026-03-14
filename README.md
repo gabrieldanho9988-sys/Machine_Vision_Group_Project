@@ -34,9 +34,16 @@ This project implements a Deep Learning pipeline to enhance the spatial resoluti
 ---
 
 ### How to Run
-1. Open `SAR_Super_Resolution.ipynb` in **Google Colab**.
+1. Open the project notebook in **Google Colab**.
 2. Ensure GPU acceleration is enabled (**Runtime** -> **Change runtime type** -> **T4 GPU**).
+3. Follow the sequential cells to reproduce the training and evaluation results.
 
 ### Data Source
 This project utilizes the [Capella Space Open Data Catalog](https://capella-open-data.s3.us-west-2.amazonaws.com/stac/capella-open-data-ieee-data-contest/collection.json).
 * **Dataset:** IEEE Data Contest (GEO SAR Imagery)
+
+---
+
+**Author:** Gabriel Danho  
+**Course:** Deep Learning  
+**Instructor:** Amit Kumar Mishra
