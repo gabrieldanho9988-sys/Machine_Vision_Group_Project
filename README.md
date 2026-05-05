@@ -20,10 +20,7 @@ Before building our AI or logic, we needed a robust, balanced dataset. We wrote 
 *   **Quantity Control:** Captured a balanced dataset of 2,800 images across Red, Blue, and Yellow chips.
 
 ### Phase 3 & 4: Visual Verification & Cleaning
-We implemented helper functions to display images directly within the notebook, essential for visual verification at each step. This phase ensured all chips were perfectly cropped, segmented from the background, and in the correct orientation before advancing.
-
-![Final Validated Chip](Drag-and-drop-your-validated-chip-image-here.png)
-*(Example of a preprocessed, automatically cropped, and oriented chip ready for the AI).*
+We implemented helper functions to display images directly within the notebook, essential for visual verification at each step. This phase ensured all chips were perfectly cropped, segmented from the background, and in the correct orientation before advancing to the AI model.
 
 ### Phase 5: Advanced Data Curation ("Double-Trap" Logic)
 Basic detection struggled with the Gold/Yellow chips blending into the green conveyor background. We engineered a more advanced "Double-Trap" algorithm:
@@ -38,10 +35,7 @@ We parsed our rigorous file naming convention to automatically generate a `train
 We built and trained a Convolutional Neural Network (CNN) to act as the primary recognition engine for the credit values.
 *   **Architecture:** 3 Convolutional Layers to extract features (edges, dots, geometric patterns), followed by Dense Layers for the final decision.
 *   **The "Dropout" Effect:** We utilized `Dropout(0.5)` during training, handicapping the model to force it to learn robust, generalizable features. 
-*   **Performance:** While training accuracy hovered around ~84% due to the dropout penalty, validation accuracy hit an expected **100%**. Because the task relies on counting highly distinct, high-contrast geometric white dots on a black background, the CNN operates flawlessly on unseen validation data.
-
-![CNN Accuracy and Loss Graphs](Drag-and-drop-your-accuracy-loss-graphs-image-here.png)
-*(Training vs. Validation metrics showcasing a highly robust and generalizable "Grand Master" level model).*
+*   **Performance:** While training accuracy hovered around ~84% due to the dropout penalty, validation accuracy hit an expected **100%**. Because the task relies on counting highly distinct, high-contrast geometric white dots on a black background, the CNN operates flawlessly on unseen validation data, proving to be a highly robust model.
 
 ### Phase 8: The "Grand Master" Scanning Engine
 The final deployment script integrates every component into a single, real-time loop:
@@ -50,9 +44,6 @@ The final deployment script integrates every component into a single, real-time 
 3.  **Classification:** Determines the color tier (Red, Blue, Yellow) using glare-resistant thresholds.
 4.  **AI Reading:** If real, the image is cropped, oriented, and passed to our trained CNN (.h5 model) to predict the exact credit value.
 5.  **Totaling:** Sums up the values of all valid, authenticated chips on screen and renders the dynamic total directly on the live video feed.
-
-![Live Scanner Engine Output](Drag-and-drop-your-green-screen-scanner-output-image-here.png)
-*(The final system in action: detecting color, identifying the chip value via the CNN, and rendering the dynamic total on-screen).*
 
 ## 🚀 How to Run (Coming Soon)
 *(Instructions on how to install dependencies and execute the live scanner will be added here upon project completion).*
